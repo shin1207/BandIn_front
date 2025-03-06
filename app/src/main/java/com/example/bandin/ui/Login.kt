@@ -14,6 +14,8 @@ class Login : AppCompatActivity() {
 
     private lateinit var userViewModel: UserViewModel
 
+    //login xml에서 변수 가져와 선언
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -21,7 +23,7 @@ class Login : AppCompatActivity() {
 
         // 로그인 버튼 클릭 시
         // 레이아웃 작업 후 코드 수정 요망
-        findViewById<Button>(R.id.btnLogin).setOnClickListener {
+        findViewById<Button>(R.id.loginButton).setOnClickListener {
             val email = findViewById<EditText>(R.id.etEmail).text.toString()
             val password = findViewById<EditText>(R.id.etPassword).text.toString()
             userViewModel.login(email, password)

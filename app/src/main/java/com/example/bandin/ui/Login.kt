@@ -1,8 +1,10 @@
 package com.example.bandin.ui
 
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bandin.R
@@ -13,31 +15,36 @@ import com.example.bandin.viewmodel.UserViewModel
 class Login : AppCompatActivity() {
 
     private lateinit var userViewModel: UserViewModel
+    lateinit var edtEmail: EditText
+    lateinit var edtPassword :EditText
+    lateinit var btnLogin : Button
+    lateinit var textSignup : TextView
 
-    //login xml에서 변수 가져와 선언
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
+        edtEmail = findViewById(R.id.edtEmail)
+        edtPassword = findViewById(R.id.edtPassword)
+        textSignup = findViewById(R.id.textSignup)
+        btnLogin = findViewById(R.id.btnLogin)
 
-        // 로그인 버튼 클릭 시
-        // 레이아웃 작업 후 코드 수정 요망
-        findViewById<Button>(R.id.loginButton).setOnClickListener {
-            val email = findViewById<EditText>(R.id.etEmail).text.toString()
-            val password = findViewById<EditText>(R.id.etPassword).text.toString()
-            userViewModel.login(email, password)
+        //비밀번호 입력 제한 두기
+
+        btnLogin.setOnClickListener{
+            //이메일, 비밀번호 입력값 가져오기
+            val email = edtEmail.text?.toString() ?: ""
+            val password = edtPassword.text?.toString() ?: ""
+
+
+            Log.d("로그인", "이메일 : $email")
+            Log.d("로그인", "비밀번호 : $password")
         }
 
-        // 로그인 결과 옵저빙
-        userViewModel.loginResult.observe(this) { response ->
-            if (response != null) {
-                Toast.makeText(this, "로그인 성공! 닉네임: ${response.nickname}", Toast.LENGTH_SHORT).show()
-                // 다음 화면으로 이동하는 코드 추가 가능
-            } else {
-                Toast.makeText(this, "로그인 실패", Toast.LENGTH_SHORT).show()
-            }
-        }
+
+
+
 
     }
 }

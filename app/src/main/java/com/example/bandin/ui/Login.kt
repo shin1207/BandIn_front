@@ -37,8 +37,11 @@ class Login : AppCompatActivity() {
             val email = edtEmail.text?.toString() ?: ""
             val password = edtPassword.text?.toString() ?: ""
 
+
             Log.d("로그인", "이메일 : $email")
             Log.d("로그인", "비밀번호 : $password")
+
+            // TODO : 로그인 API 호출 (Retrofit)
         }
     }
 }

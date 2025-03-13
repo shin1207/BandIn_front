@@ -15,5 +15,7 @@ class SignUpViewModel  : ViewModel()  {
     var state: String? = null       //활동 지역
     var instruments: String? = null //악기 - 복수값 허용해줘야 됨
     var experience: String? = null  //악기 경력
+    var genre: String? = null       //선호 장르
+    var style: String? = null       //활동 유형
 
 }

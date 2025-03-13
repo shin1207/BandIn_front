@@ -11,19 +11,18 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
 
         <ProgressBar
             android:id="@+id/progressBar2"
             style="?android:attr/progressBarStyleHorizontal"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="70dp"
+            android:layout_height="7dp"
+            android:layout_marginTop="50dp"
             android:max="100"
-            android:progress="24"
-            android:progressBackgroundTint="@color/lightDark"
-            android:progressTint="@color/darkestBlue" />
+            android:progress="48"
+            android:progressDrawable="@drawable/sign_up_progress_bar" />
 
         <TextView
             android:id="@+id/textView11"
@@ -62,7 +61,7 @@
                     android:textColor="@color/darkestBlue" />
 
                 <Button
-                    android:id="@+id/btnExp1"
+                    android:id="@+id/btnStyle1"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -76,7 +75,7 @@
                     android:textColor="@color/darkestBlue" />
 
                 <Button
-                    android:id="@+id/btnExp2"
+                    android:id="@+id/btnStyle2"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -88,7 +87,7 @@
                     android:text="1년 이상 3년 미만" />
 
                 <Button
-                    android:id="@+id/btnExp3"
+                    android:id="@+id/btnStyle3"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -100,7 +99,7 @@
                     android:text="3년 이상 5년 미만" />
 
                 <Button
-                    android:id="@+id/btnExp4"
+                    android:id="@+id/btnGenre4"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -111,7 +110,7 @@
                     android:text="5년 이상 10년 미만" />
 
                 <Button
-                    android:id="@+id/btnExp5"
+                    android:id="@+id/btnGenre5"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

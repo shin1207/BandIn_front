@@ -9,6 +9,8 @@
     <color name="mediumBlue">#6FB9FF</color>
     <color name="lightBlue">#B3DAFF</color>
     <color name="lightestBlue">#EAF2FF</color>
+    <color name="lightestBlue2">#E3F1FD</color>
+
 
     <!-- Neutral Light -->
     <color name="darkestLight">#C5C6CC</color>

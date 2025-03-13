@@ -5,6 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:backgroundTint="@color/lightestBlue2"
     tools:context=".ui.SignUpStep6Fragment">
 
     <LinearLayout
@@ -21,7 +22,7 @@
             android:layout_height="7dp"
             android:layout_marginTop="50dp"
             android:max="100"
-            android:progress="24"
+            android:progress="72"
             android:progressDrawable="@drawable/sign_up_progress_bar" />
 
         <TextView
@@ -31,7 +32,7 @@
             android:layout_marginTop="30dp"
             android:layout_marginBottom="15dp"
             android:fontFamily="sans-serif-black"
-            android:text="악기를 다룰 줄 아시나요?"
+            android:text="선호하는 장르를 알려주세요"
             android:textColor="@color/black"
             android:textSize="25sp" />
 
@@ -40,45 +41,44 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="sans-serif-black"
-            android:text="희망하는 역할을 선택해주세요" />
+            android:text="당신과 함께할 밴드를 찾아드릴게요" />
 
         <Button
-            android:id="@+id/btnStyle1"
+            android:id="@+id/btnGenre1"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/login_radius_text"
-            android:backgroundTint="#E3F1FD"
-            android:fontFamily="sans-serif-medium"
+            android:backgroundTint="@color/lightestBlue2"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="기타"
+            android:text="해외 락"
             android:textColor="@color/darkestBlue" />
 
         <Button
-            android:id="@+id/btnStyle2"
+            android:id="@+id/btnGenre2"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
             android:layout_marginTop="10dp"
             android:background="@drawable/login_radius_text"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="드럼" />
+            android:text="메탈" />
 
         <Button
-            android:id="@+id/btnStyle3"
+            android:id="@+id/btnGenre3"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
             android:layout_marginTop="10dp"
             android:background="@drawable/login_radius_text"
+            android:backgroundTint="@color/lightestBlue2"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="보컬" />
+            android:text="재즈"
+            android:textColor="@color/darkestBlue" />
 
         <Button
             android:id="@+id/btnGenre4"
@@ -89,7 +89,7 @@
             android:background="@drawable/login_radius_text"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="베이스" />
+            android:text="국내 인디" />
 
         <Button
             android:id="@+id/btnGenre5"
@@ -101,7 +101,7 @@
             android:background="@drawable/login_radius_text"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="건반악기" />
+            android:text="CCM" />
 
         <Button
             android:id="@+id/btnGenre6"
@@ -113,7 +113,31 @@
             android:background="@drawable/login_radius_text"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="없음" />
+            android:text="J-POP" />
+
+        <Button
+            android:id="@+id/btnGenre7"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_radius_text"
+            android:gravity="center|left"
+            android:paddingLeft="15dp"
+            android:text="팝" />
+
+        <Button
+            android:id="@+id/btnGenre8"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/login_radius_text"
+            android:gravity="center|left"
+            android:paddingLeft="15dp"
+            android:text="기타 장르" />
 
         <Button
             android:id="@+id/btnNext"

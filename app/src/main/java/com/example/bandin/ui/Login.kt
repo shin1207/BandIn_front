@@ -30,21 +30,15 @@ class Login : AppCompatActivity() {
         textSignup = findViewById(R.id.textSignup)
         btnLogin = findViewById(R.id.btnLogin)
 
-        //비밀번호 입력 제한 두기
+        // TODO: 비밀번호 입력 자릿수 제한 두기
 
         btnLogin.setOnClickListener{
             //이메일, 비밀번호 입력값 가져오기
             val email = edtEmail.text?.toString() ?: ""
             val password = edtPassword.text?.toString() ?: ""
 
-
             Log.d("로그인", "이메일 : $email")
             Log.d("로그인", "비밀번호 : $password")
         }
-
-
-
-
-
     }
 }

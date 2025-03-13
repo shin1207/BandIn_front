@@ -26,10 +26,4 @@ class UserViewModel(private val userRepository: UserRepository) : ViewModel() {
         }
     }
 
-    // 회원가입 함수
-    fun signup(email: String, password: String, nickname: String) {
-        userRepository.signup(email, password, nickname) { isSuccess ->
-            _signupResult.postValue(isSuccess) // 회원가입 성공 여부 업데이트
-        }
-    }
 }

@@ -36,6 +36,7 @@ android {
 }
 
 dependencies {
+    implementation("androidx.fragment:fragment-ktx:1.6.2") // fragment 설정
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1") // ViewModel
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.6.1") // LiveData
     implementation("com.squareup.retrofit2:retrofit:2.9.0") // Retrofit (API 통신)

@@ -14,26 +14,37 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BandIn"
         tools:targetApi="31">
-
-        <!-- 액티비티마다 키보드 나타날 때 화면조정 설정해주기 -->
-
         <activity
-            android:name=".ui.SignUp"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true" />
+            android:name=".ui.SignUpStep7Fragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SignUpStep6Fragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SignUpStep5Fragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SignUpStep4Fragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.SignUpStep3Fragment"
+            android:exported="false" /> <!-- 액티비티마다 키보드 나타날 때 화면조정 설정해주기 -->
+        <activity
+            android:name=".ui.SignUpStep1Fragment"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
             android:name=".ui.Login"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true" />
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".ui.MainActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true"/>
+            android:name=".ui.SignUp"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".ui.EmailValidation"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true">
-
+            android:name=".ui.SignUpStep2Fragment"
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

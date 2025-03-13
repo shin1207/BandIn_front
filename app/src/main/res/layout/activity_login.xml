@@ -78,7 +78,8 @@
             android:id="@+id/btnLogin"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:background="@drawable/corner_radius_button"
+            android:layout_marginBottom="7dp"
+            android:background="@drawable/radius_button_darkest_blue"
             android:fontFamily="sans-serif-black"
             android:text="로그인"
             android:textColor="@color/white" />

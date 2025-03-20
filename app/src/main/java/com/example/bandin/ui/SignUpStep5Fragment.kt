@@ -41,23 +41,23 @@ class SignUpStep5Fragment : Fragment() {
         }
 
         btnState2.setOnClickListener {
-            state = "경기도"
+            state = "경기"
         }
 
         btnState3.setOnClickListener {
-            state = "충청도"
+            state = "충청"
         }
 
         btnState4.setOnClickListener {
-            state = "강원도"
+            state = "강원"
         }
 
         btnState5.setOnClickListener {
-            state = "경상도"
+            state = "경상"
         }
 
         btnState6.setOnClickListener {
-            state = "전라도"
+            state = "전라"
         }
 
 

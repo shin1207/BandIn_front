@@ -8,13 +8,18 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bandin.R
-import com.example.bandin.data.api.ApiClient
-import com.example.bandin.data.repository.UserRepository
-import com.example.bandin.viewmodel.UserViewModel
+import com.example.bandin.data.api.RetrofitClient
+import com.example.bandin.data.model.LoginRequest
+import com.example.bandin.data.model.LoginResponse
+import com.example.bandin.viewmodel.LoginViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
+
 
 class Login : AppCompatActivity() {
 
-    private lateinit var userViewModel: UserViewModel
+    private lateinit var loginViewModel: LoginViewModel
     lateinit var edtEmail: EditText
     lateinit var edtPassword :EditText
     lateinit var btnLogin : Button
@@ -37,11 +42,28 @@ class Login : AppCompatActivity() {
             val email = edtEmail.text?.toString() ?: ""
             val password = edtPassword.text?.toString() ?: ""
 
-
             Log.d("로그인", "이메일 : $email")
             Log.d("로그인", "비밀번호 : $password")
 
             // TODO : 로그인 API 호출 (Retrofit)
+
+            val request = LoginRequest(email, password)
+
+            RetrofitClient.instance.login(request).enqueue(object : Callback<LoginResponse> {
+                override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+                    if (response.isSuccessful) {
+                        Log.d("로그인 성공", "토큰: ${response.body()?.token}")
+                    } else {
+                        Log.e("로그인 실패", "오류 코드: ${response.code()}")
+                    }
+                }
+
+
+                override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
+                    Toast.makeText(this@Login, "네트워크 오류", Toast.LENGTH_SHORT).show()
+                }
+            })
+
         }
     }
 }

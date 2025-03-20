@@ -42,6 +42,7 @@ dependencies {
     implementation("com.squareup.retrofit2:retrofit:2.9.0") // Retrofit (API 통신)
     implementation("com.squareup.retrofit2:converter-gson:2.9.0") // JSON 변환
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.10.0") // RetrofitClient설정
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)

@@ -30,7 +30,7 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        edtEmail = findViewById(R.id.edtEmail)
+        edtEmail = findViewById(R.id.edtBandName)
         edtPassword = findViewById(R.id.edtPassword)
         textSignup = findViewById(R.id.textSignup)
         btnLogin = findViewById(R.id.btnLogin)

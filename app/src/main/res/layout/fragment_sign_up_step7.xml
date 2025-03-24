@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SignUpStep7Fragment">
+    tools:context=".ui.SignUp.SignUpStep7Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -56,12 +56,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="20dp"
+                    android:drawableRight="@drawable/baseline_keyboard_arrow_down_24"
                     android:fontFamily="sans-serif-black"
                     android:text="기타"
                     android:textColor="@color/darkestBlue" />
 
                 <Button
-                    android:id="@+id/btnStyle1"
+                    android:id="@+id/btnExp1"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -75,7 +76,7 @@
                     android:textColor="@color/darkestBlue" />
 
                 <Button
-                    android:id="@+id/btnStyle2"
+                    android:id="@+id/btnExp2"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -87,7 +88,7 @@
                     android:text="1년 이상 3년 미만" />
 
                 <Button
-                    android:id="@+id/btnStyle3"
+                    android:id="@+id/btnExp3"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -99,7 +100,7 @@
                     android:text="3년 이상 5년 미만" />
 
                 <Button
-                    android:id="@+id/btnGenre4"
+                    android:id="@+id/btnExp4"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -110,7 +111,7 @@
                     android:text="5년 이상 10년 미만" />
 
                 <Button
-                    android:id="@+id/btnGenre5"
+                    android:id="@+id/btnExp5"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -120,6 +121,84 @@
                     android:gravity="center|left"
                     android:paddingLeft="15dp"
                     android:text="10년 이상 " />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/textInst2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        android:drawableRight="@drawable/baseline_keyboard_arrow_down_24"
+                        android:fontFamily="sans-serif-black"
+                        android:text="베이스"
+                        android:textColor="@color/darkestBlue" />
+
+                    <Button
+                        android:id="@+id/btnExp1"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/login_radius_text"
+                        android:backgroundTint="#E3F1FD"
+                        android:fontFamily="sans-serif-medium"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:text="1년 이하"
+                        android:textColor="@color/darkestBlue" />
+
+                    <Button
+                        android:id="@+id/btnExp2"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/login_radius_text"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:text="1년 이상 3년 미만" />
+
+                    <Button
+                        android:id="@+id/btnExp3"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/login_radius_text"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:text="3년 이상 5년 미만" />
+
+                    <Button
+                        android:id="@+id/btnExp4"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/login_radius_text"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:text="5년 이상 10년 미만" />
+
+                    <Button
+                        android:id="@+id/btnExp5"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="left"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/login_radius_text"
+                        android:gravity="center|left"
+                        android:paddingLeft="15dp"
+                        android:text="10년 이상 " />
+                </LinearLayout>
+
             </LinearLayout>
         </ScrollView>
 

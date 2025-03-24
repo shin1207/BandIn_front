@@ -1,16 +1,12 @@
-package com.example.bandin.ui
+package com.example.bandin.ui.SignUp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.bandin.R
 import com.example.bandin.viewmodel.SignUpViewModel
 import androidx.fragment.app.activityViewModels
@@ -28,7 +24,7 @@ class SignUpStep1Fragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_sign_up_step1, container, false)
 
         //함수안에서 쓸 변수 설정
-        val edtEmail = view.findViewById<EditText>(R.id.edtEmail)
+        val edtEmail = view.findViewById<EditText>(R.id.edtBandName)
         val btnNext = view.findViewById<Button>(R.id.btnNext)
 
 

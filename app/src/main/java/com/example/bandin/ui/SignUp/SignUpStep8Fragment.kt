@@ -1,16 +1,10 @@
-package com.example.bandin.ui
+package com.example.bandin.ui.SignUp
 
 import android.os.Bundle
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
-import android.widget.Toast
-import androidx.activity.enableEdgeToEdge
-import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.bandin.R
@@ -39,7 +33,7 @@ class SignUpStep8Fragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_sign_up_step8, container, false)
 
 
-        //사용자가 누른 버튼에 따라 experience의 String 값 설정
+        //사용자가 누른 버튼에 따라 genre의 String 값 설정
         btnGenre1.setOnClickListener {
             genre = "해외락"
         }

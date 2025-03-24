@@ -5,14 +5,14 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.SignUp.SignUpStep5Fragment">
+    tools:context=".ui.SignUp.SignUpStep6Fragment">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:paddingLeft="20dp"
-        android:paddingRight="20dp">
+        android:paddingLeft="25dp"
+        android:paddingRight="25dp">
 
         <ProgressBar
             android:id="@+id/progressBar2"
@@ -21,29 +21,48 @@
             android:layout_height="7dp"
             android:layout_marginTop="50dp"
             android:max="100"
-            android:progress="0"
+            android:progress="100"
             android:progressDrawable="@drawable/sign_up_progress_bar" />
 
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
+        <LinearLayout
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:layout_marginBottom="15dp"
-            android:fontFamily="sans-serif-black"
-            android:text="활동 지역을 선택해주세요"
-            android:textColor="@color/black"
-            android:textSize="25sp" />
+            android:gravity="center"
+            android:orientation="horizontal">
 
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:fontFamily="sans-serif-black"
-            android:text="해당 지역의 밴드를 알려드릴게요" />
+            <Button
+                android:id="@+id/btnBack"
+                tools:ignore="SpeakableTextPresentCheck"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:background="@drawable/baseline_arrow_back_ios_24" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-black"
+                    android:text="밴드 만들기"
+                    android:textColor="@color/black"
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:id="@+id/textView16"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="활동 스타일을 선택해주세요" />
+            </LinearLayout>
+        </LinearLayout>
 
         <Button
-            android:id="@+id/btnState1"
+            android:id="@+id/btnStyle1"
             style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -53,11 +72,20 @@
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="서울"
+            android:text="취미"
             android:textColor="@color/darkestBlue" />
 
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="친구들과 재미로 합주하고 공연도 해보고 싶어요"
+            android:textSize="12sp" />
+
         <Button
-            android:id="@+id/btnState2"
+            android:id="@+id/btnStyle2"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -65,11 +93,19 @@
             android:background="@drawable/login_radius_text"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="경기도"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:text="세미 프로" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="녹음 및 공연 경험이 있고, 좀 더 책임감 있는 활동을 지향해요"
+            android:textSize="12sp" />
 
         <Button
-            android:id="@+id/btnState3"
+            android:id="@+id/btnStyle3"
+            style="?android:attr/borderlessButtonStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="left"
@@ -77,43 +113,15 @@
             android:background="@drawable/login_radius_text"
             android:gravity="center|left"
             android:paddingLeft="15dp"
-            android:text="충청도"
-            style="?android:attr/borderlessButtonStyle"/>
+            android:text="프로 지향" />
 
-        <Button
-            android:id="@+id/btnState4"
+        <TextView
+            android:id="@+id/textView15"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
-            android:gravity="center|left"
-            android:paddingLeft="15dp"
-            android:text="강원도"
-            style="?android:attr/borderlessButtonStyle"/>
-
-        <Button
-            android:id="@+id/btnState5"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
-            android:gravity="center|left"
-            android:paddingLeft="15dp"
-            android:text="경상도"
-            style="?android:attr/borderlessButtonStyle" />
-
-        <Button
-            android:id="@+id/btnState6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
-            android:gravity="center|left"
-            android:paddingLeft="15dp"
-            android:text="전라도"
-            style="?android:attr/borderlessButtonStyle" />
+            android:layout_marginTop="5dp"
+            android:text="음악을 직업으로 삼고 싶고, 열정적인 활동을 지향해요"
+            android:textSize="12sp" />
 
         <Button
             android:id="@+id/btnNext"
@@ -122,8 +130,9 @@
             android:layout_marginTop="30dp"
             android:background="@drawable/radius_button_darkest_blue"
             android:fontFamily="sans-serif-black"
-            android:text="다음"
+            android:text="완료"
             android:textColor="@color/white" />
 
     </LinearLayout>
+
 </LinearLayout>

@@ -1,26 +1,25 @@
-package com.example.bandin.ui
+package com.example.bandin.ui.BandCreate
 
 import android.os.Bundle
-import android.text.TextUtils.replace
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.example.bandin.R
-import com.example.bandin.viewmodel.SignUpViewModel
 import androidx.fragment.app.Fragment
+import com.example.bandin.viewmodel.BandCreateViewModel
 
 
-class SignUp : AppCompatActivity() {
+class BandCreate : AppCompatActivity() {
 
-    private val signUpViewModel: SignUpViewModel by viewModels() // ViewModel 생성 및 공유
+    private val bandCreateViewModel: BandCreateViewModel by viewModels() // ViewModel 생성 및 공유
     //액티비티 인 경우 by viewModels() 사용
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_sign_up)
+        setContentView(R.layout.activity_band_create)
 
         // 처음 이메일 입력 화면(Fragment) 띄우기
         supportFragmentManager.beginTransaction()
-            .replace(R.id.fragment_container, SignUpStep1Fragment())
+            .replace(R.id.fragment_container, BandCreateStep1Fragment())
             .commit()
     }
 

@@ -98,7 +98,7 @@
             android:layout_height="50dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:background="@drawable/radius_button_lightest_blue"
+            android:background="@drawable/radius_button_medium_blue"
             android:gravity="center"
             android:orientation="horizontal">
 

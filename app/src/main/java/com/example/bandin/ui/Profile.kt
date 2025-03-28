@@ -8,7 +8,7 @@ import androidx.core.view.WindowInsetsCompat
 import com.example.bandin.R
 
 class Profile : AppCompatActivity() {
-    //DB에서 회원 정보 조회 후 가져오기
+    //프로필화면 - DB에서 회원 정보 조회 후 가져오기
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.bandin.R
+import com.example.bandin.data.model.State
 import com.example.bandin.viewmodel.SignUpViewModel
 
 class SignUpStep5Fragment : Fragment() {
@@ -20,6 +21,7 @@ class SignUpStep5Fragment : Fragment() {
     lateinit var btnState4: Button
     lateinit var btnState5: Button
     lateinit var btnState6: Button
+    lateinit var btnState7: Button
 
     lateinit var state: String
     private val signUpViewModel: SignUpViewModel by activityViewModels() // ViewModel 공유
@@ -57,6 +59,10 @@ class SignUpStep5Fragment : Fragment() {
             state = "전라"
         }
 
+        btnState7.setOnClickListener {
+            state = "제주"
+        }
+
 
         //다음 클릭
         btnNext.setOnClickListener {
@@ -64,7 +70,7 @@ class SignUpStep5Fragment : Fragment() {
             //TODO : 값이 입력되지 않은 상태일 때 모달/문구 띄우기 & 다음 스텝 넘어가지 못하게
 
             //viewModel에 State 값 저장
-            signUpViewModel.state = state
+            signUpViewModel.state = State.valueOf(state)  // String을 Enum으로 변환하여 저장
 
             //다음 스텝 레이아웃으로 이동
             (activity as? SignUp)?.goToNextFragment(SignUpStep6Fragment())

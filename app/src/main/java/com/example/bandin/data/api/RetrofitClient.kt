@@ -9,7 +9,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 
 object RetrofitClient {
-    private const val BASE_URL = "https://your-api.com/" // ⚠️ 백엔드 주소 입력!
+    private const val BASE_URL = "http://localhost:8080" //우선은 로컬로 설정 -> ⚠️ 백엔드 주소 입력!
 
     private val client = OkHttpClient.Builder()
         .addInterceptor(HttpLoggingInterceptor().apply {

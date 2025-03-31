@@ -1,5 +1,6 @@
 package com.example.bandin.ui.SignUp
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,7 +12,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.bandin.R
 import com.example.bandin.data.api.RetrofitClient
+import com.example.bandin.data.model.Gender
+import com.example.bandin.data.model.Genre
+import com.example.bandin.data.model.Instrument
+import com.example.bandin.data.model.InstrumentExperience
 import com.example.bandin.data.model.SignUpRequest
+import com.example.bandin.data.model.SignUpResponse
+import com.example.bandin.data.model.State
+import com.example.bandin.data.model.Style
+import com.example.bandin.ui.Main
 import com.example.bandin.viewmodel.SignUpViewModel
 import retrofit2.Call
 import retrofit2.Callback
@@ -36,11 +45,11 @@ class SignUpStep9Fragment : Fragment() {
 
 
         //사용자가 누른 버튼에 따라 style의 String 값 설정
-        btnStyle1.setOnClickListener { style = "취미" }
+        btnStyle1.setOnClickListener { style = "취미" }  //취미밴드
 
-        btnStyle2.setOnClickListener { style = "세미프로" }
+        btnStyle2.setOnClickListener { style = "세미프로" }  //세미프로
 
-        btnStyle3.setOnClickListener { style = "프로지향" }
+        btnStyle3.setOnClickListener { style = "프로" }  //프로지향
 
 
 
@@ -53,8 +62,8 @@ class SignUpStep9Fragment : Fragment() {
                 return@setOnClickListener
             }
 
-            //viewModel에 State 값 저장
-            signUpViewModel.style = style
+            //viewModel에 style 값 저장
+            signUpViewModel.style = Style.valueOf(style)  // String을 Enum으로 변환하여 저장
 
             val email = signUpViewModel.email
             val password = signUpViewModel.password
@@ -64,38 +73,46 @@ class SignUpStep9Fragment : Fragment() {
             val gender = signUpViewModel.gender
 
             val state = signUpViewModel.state
-            val instruments = signUpViewModel.instruments
-            val experience = signUpViewModel.experience
+
+            //악기 및 경력 값을 viewModel에서 가져오기
+            val instrument = signUpViewModel.InstrumentExperience ?: emptyList()
+
+
+
             val genre = signUpViewModel.genre
             val style = signUpViewModel.style
 
 
             //모든 값을 받았는지 확인
             if (email != null && password != null && name != null && birth != null
-                && gender != null && state != null && instruments != null
-                && experience != null && genre != null && style != null)  {
+                && gender != null && state != null &&  genre != null && style != null && instrument != null)  {
 
                 //<최종 단계> 회원가입 api 불러오기
-                sendSignUpRequest(email, password, name, birth, gender, state, instruments, experience, genre, style)
+                SignUp(email, password, name, birth, gender, state, genre, style, instrument)
             }
 
-            Log.d("디버깅", "<< 회원가입 성공 >>")
+            Log.d("디버깅", "사용자 : ${name} - 회원가입이 완료되었습니다. ")
 
-            //메인페이지로 이동
-            // TODO : 메인페이지 구현 후 액티비티 연결
+
+            // 회원가입 성공 후 Main (메인화면)로 이동
+            val intent = Intent(requireContext(), Main::class.java)
+            startActivity(intent)
+
+            activity?.finish()  // 회원가입 화면 종료 (사용자가 뒤로가기 눌러도 이동못하게 종료시킴)
+
         }
         return view
     }
 
-    private fun sendSignUpRequest(email: String, password: String, name: String, birth: String,
-                                  gender: String, state: String, instruments: String, experience: String,
-                                  genre: String, style: String) {
+    private fun SignUp(email: String, password: String, name: String, birth: String,
+                       gender: Gender, state: State, genre: Genre, style: Style,
+                       instrument: List<InstrumentExperience>) {
 
         // TODO: Retrofit API 호출
-        val request = SignUpRequest(email, password, name, birth, gender, state, instruments, experience, genre, style)
+        val request = SignUpRequest(email, password, name, birth, gender, state, genre, style, instrument)
 
-        RetrofitClient.instance.signup(request).enqueue(object : Callback<Void> {
-            override fun onResponse(call: Call<Void>, response: Response<Void>) {
+        RetrofitClient.instance.signup(request).enqueue(object : Callback<SignUpResponse> {
+            override fun onResponse(call: Call<SignUpResponse>, response: Response<SignUpResponse>) {
                 if (response.isSuccessful) {
                     Log.d("디버깅", "회원가입 성공")
                     // TODO: 메인 화면으로 이동
@@ -105,11 +122,13 @@ class SignUpStep9Fragment : Fragment() {
                 }
             }
 
-            override fun onFailure(call: Call<Void>, t: Throwable) {
+            // onFailure 메서드를 제대로 구현
+            override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
                 Log.e("디버깅", "회원가입 API 오류: ${t.message}")
+                Toast.makeText(requireContext(), "회원가입 오류. 인터넷 연결을 확인해주세요.", Toast.LENGTH_SHORT).show()
             }
         })
 
-        Log.d("디버깅", "api -> 회원가입 API 불러오기 성공")
+        Log.d("디버깅", "<<api>> 회원가입 API 불러오기 성공")
     }
 }

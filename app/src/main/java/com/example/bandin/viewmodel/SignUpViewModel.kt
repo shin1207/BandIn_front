@@ -3,7 +3,6 @@ package com.example.bandin.viewmodel
 import androidx.lifecycle.ViewModel
 import com.example.bandin.data.model.Gender
 import com.example.bandin.data.model.Genre
-import com.example.bandin.data.model.Instrument
 import com.example.bandin.data.model.InstrumentExperience
 import com.example.bandin.data.model.State
 import com.example.bandin.data.model.Style

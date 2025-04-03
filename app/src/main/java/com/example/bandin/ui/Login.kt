@@ -24,13 +24,14 @@ class Login : AppCompatActivity() {
     lateinit var edtPassword :EditText
     lateinit var btnLogin : Button
     lateinit var textSignup : TextView
+    lateinit var textFindPassword : TextView //비밀번호찾기 구현 후 추가
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
 
-        edtEmail = findViewById(R.id.edtBandName)
+        edtEmail = findViewById(R.id.edtEmail)
         edtPassword = findViewById(R.id.edtPassword)
         textSignup = findViewById(R.id.textSignup)
         btnLogin = findViewById(R.id.btnLogin)
@@ -45,7 +46,7 @@ class Login : AppCompatActivity() {
             Log.d("로그인", "이메일 : $email")
             Log.d("로그인", "비밀번호 : $password")
 
-            // TODO : 로그인 API 호출 (Retrofit)
+            //로그인 API 호출 (Retrofit)
 
             val request = LoginRequest(email, password)
 

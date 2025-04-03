@@ -88,6 +88,11 @@ data class EmailVerifyRequest(
     val code: String
 )
 
+// 회원가입 > 인증번호 검증 응답모델
+data class EmailVerifyResponse(
+    val message: String
+)
+
 // 로그아웃 요청모델
 data class LogoutRequest(
     val email: String,

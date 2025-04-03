@@ -24,7 +24,7 @@ interface AuthService {
 
     // 회원가입 > 인증번호 검증
     @POST("/api/member/verify")
-    fun emailVerify(@Body request: EmailVerifyRequest): Call<Void> // 성공 시 응답 본문 없음
+    fun emailVerify(@Body request: EmailVerifyRequest): Call<EmailVerifyResponse>
 
     // 로그아웃
     @POST("/api/logout")

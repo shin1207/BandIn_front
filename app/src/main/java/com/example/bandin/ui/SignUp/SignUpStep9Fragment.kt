@@ -65,6 +65,7 @@ class SignUpStep9Fragment : Fragment() {
             //viewModel에 style 값 저장
             signUpViewModel.style = Style.valueOf(style)  // String을 Enum으로 변환하여 저장
 
+            //viewModel에 저장된 데이터 가져오기
             val email = signUpViewModel.email
             val password = signUpViewModel.password
 
@@ -76,8 +77,6 @@ class SignUpStep9Fragment : Fragment() {
 
             //악기 및 경력 값을 viewModel에서 가져오기
             val instrument = signUpViewModel.InstrumentExperience ?: emptyList()
-
-
 
             val genre = signUpViewModel.genre
             val style = signUpViewModel.style
@@ -117,16 +116,14 @@ class SignUpStep9Fragment : Fragment() {
                     Log.d("디버깅", "회원가입 성공")
                     // TODO: 메인 화면으로 이동
                 } else {
-                    Log.e("디버깅", "회원가입 실패: ${response.code()}")
+                    Log.d("디버깅", "회원가입 실패: ${response.code()}")
 
                 }
             }
 
-            // onFailure 메서드를 제대로 구현
+            // onFailure 메서드
             override fun onFailure(call: Call<SignUpResponse>, t: Throwable) {
-                Log.e("디버깅", "회원가입 API 오류: ${t.message}")
-                Toast.makeText(requireContext(), "회원가입 오류. 인터넷 연결을 확인해주세요.", Toast.LENGTH_SHORT).show()
-            }
+                Log.d("디버깅", "회원가입 API 오류: ${t.message}") }
         })
 
         Log.d("디버깅", "<<api>> 회원가입 API 불러오기 성공")

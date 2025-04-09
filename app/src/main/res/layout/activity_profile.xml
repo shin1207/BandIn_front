@@ -76,10 +76,12 @@
                         android:layout_height="22dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/radius_button_darkest_blue"
+                        android:background="@drawable/radius_button_white"
+                        android:backgroundTintMode="src_atop"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center|center_vertical"
-                        android:text="밴드1"
-                        android:textColor="@color/white"
+                        android:text="레이놀즈"
+                        android:textColor="@color/darkBlue"
                         android:textSize="10sp" />
 
                     <TextView
@@ -88,10 +90,11 @@
                         android:layout_height="22dp"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/radius_button_darkest_blue"
+                        android:background="@drawable/radius_button_white"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center|center_vertical"
-                        android:text="밴드2"
-                        android:textColor="@color/white"
+                        android:text="호프가든"
+                        android:textColor="@color/darkBlue"
                         android:textSize="10sp" />
 
                     <TextView
@@ -99,10 +102,11 @@
                         android:layout_width="wrap_content"
                         android:layout_height="22dp"
                         android:layout_weight="1"
-                        android:background="@drawable/radius_button_darkest_blue"
+                        android:background="@drawable/radius_button_white"
+                        android:fontFamily="sans-serif-black"
                         android:gravity="center|center_vertical"
-                        android:text="밴드3"
-                        android:textColor="@color/white"
+                        android:text="설"
+                        android:textColor="@color/darkBlue"
                         android:textSize="10sp" />
 
                 </LinearLayout>

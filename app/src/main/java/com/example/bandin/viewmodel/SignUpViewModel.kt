@@ -1,8 +1,12 @@
 package com.example.bandin.viewmodel
 
 import androidx.lifecycle.ViewModel
+import com.example.bandin.data.model.Gender
+import com.example.bandin.data.model.Genre
+import com.example.bandin.data.model.InstrumentExperience
+import com.example.bandin.data.model.State
+import com.example.bandin.data.model.Style
 
-//DB 구조 보고 다시 수정
 
 class SignUpViewModel  : ViewModel()  {
     var email: String? = null       //이메일
@@ -10,12 +14,11 @@ class SignUpViewModel  : ViewModel()  {
 
     var name: String? = null        //이름
     var birth: String? = null       //생년월일
-    var gender: String? = null      //성별
+    var gender: Gender? = null      // 성별 (enum으로 변경)
 
-    var state: String? = null       //활동 지역
-    var instruments: String? = null //악기 - 복수값 허용해줘야 됨
-    var experience: String? = null  //악기 경력
-    var genre: String? = null       //선호 장르
-    var style: String? = null       //활동 유형
+    var state: State? = null        // 활동 지역 (enum으로 변경)
+    var InstrumentExperience: List<InstrumentExperience>? = null // 악기 (복수값을 List로 처리)
+    var genre: Genre? = null        // 선호 장르 (enum으로 변경)
+    var style: Style? = null        // 활동 유형 (enum으로 변경)
 
 }

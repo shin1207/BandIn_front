@@ -7,8 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import com.example.bandin.R
+import com.example.bandin.data.api.RetrofitClient
+import com.example.bandin.data.model.EmailSendRequest
+import com.example.bandin.data.model.EmailSendResponse
+import com.example.bandin.data.model.EmailVerifyRequest
+import com.example.bandin.data.model.EmailVerifyResponse
+import com.example.bandin.data.model.SignUpResponse
+import com.example.bandin.viewmodel.SignUpViewModel
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class SignUpStep2Fragment : Fragment()  {
 
@@ -18,8 +30,7 @@ class SignUpStep2Fragment : Fragment()  {
     lateinit var edtNum3 : EditText
     lateinit var edtNum4 : EditText
 
-    //viewModel 사용하게 되면 코드로 쓰기
-    //private val signUpViewModel: SignUpViewModel by activityViewModels() // ViewModel 공유
+    private val signUpViewModel: SignUpViewModel by activityViewModels() // ViewModel 공유
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,13 +57,16 @@ class SignUpStep2Fragment : Fragment()  {
             val num4 = edtNum4.text?.toString()?.toIntOrNull() ?: 0
 
             val validation_num = "$num1$num2$num3$num4"
+            val user_email = signUpViewModel.email
 
             // 변환된 4자리 숫자 확인
             Log.d("디버깅", "(인증번호 변환) 이메일 인증번호: $validation_num")
 
 
-            //인증번호 검증 api 불러오기 (validation_num)
-
+            //TODO : 인증번호 검증 api 불러오기 (validation_num)
+            if (user_email != null) {
+                emailVerify(user_email ,validation_num)
+            }
 
             //인증번호 검증 성공 후
             Log.d("디버깅", "<< 이메일이 검증되었습니다 >>")
@@ -62,11 +76,36 @@ class SignUpStep2Fragment : Fragment()  {
 
             //버튼 클릭 -> 다음페이지로 이동
             btnValidate.setOnClickListener{
-                Log.d("디버깅", "다음 페이지로 이동합니다.")
                 // 회원가입 액티비티 통해서 다음 Fragment로 이동
                 (activity as? SignUp)?.goToNextFragment(SignUpStep3Fragment())
             }
         }
         return view
+    }
+
+
+    // 인증번호 검증 API
+    private fun emailVerify(email: String, code: String) {
+        // 요청 바디 생성
+        val request = EmailVerifyRequest(email, code)
+
+        // Retrofit API 호출
+        RetrofitClient.instance.emailVerify(request).enqueue(object : Callback<EmailVerifyResponse> {
+            override fun onResponse(call: Call<EmailVerifyResponse>, response: Response<EmailVerifyResponse>) {
+                if (response.isSuccessful) {
+                    Log.d("디버깅", "이메일 전송 요청 성공: ${response.body()?.message}")
+
+                } else {
+                    Log.e("디버깅", "이메일 전송 요청 실패: ${response.code()}")
+                }
+            }
+
+            // onFailure 메서드
+            override fun onFailure(call: Call<EmailVerifyResponse>, t: Throwable) {
+                Log.e("디버깅", "인증번호 검증 API 오류: ${t.message}")
+            }
+        })
+
+        Log.d("디버깅", "api -> 이메일 인증 API 불러오기 성공")
     }
 }

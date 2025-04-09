@@ -8,6 +8,7 @@ import android.widget.Button
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.bandin.R
+import com.example.bandin.data.model.Genre
 import com.example.bandin.viewmodel.SignUpViewModel
 
 class SignUpStep8Fragment : Fragment() {
@@ -51,11 +52,11 @@ class SignUpStep8Fragment : Fragment() {
         }
 
         btnGenre5.setOnClickListener {
-            genre = "CCM"
+            genre = "ccm"
         }
 
         btnGenre6.setOnClickListener {
-            genre = "J-POP"
+            genre = "jpop"
         }
 
         btnGenre7.setOnClickListener {
@@ -74,7 +75,7 @@ class SignUpStep8Fragment : Fragment() {
             //TODO : 값이 입력되지 않은 상태일 때 모달/문구 띄우기 & 다음 스텝 넘어가지 못하게
 
             //viewModel에 State 값 저장
-            signUpViewModel.genre = genre
+            signUpViewModel.genre = Genre.valueOf(genre)
 
             //다음 스텝 레이아웃으로 이동
             (activity as? SignUp)?.goToNextFragment(SignUpStep9Fragment())

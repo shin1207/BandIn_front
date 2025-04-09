@@ -10,6 +10,7 @@ import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import com.example.bandin.R
+import com.example.bandin.data.model.Gender
 import com.example.bandin.viewmodel.SignUpViewModel
 
 class SignUpStep4Fragment : Fragment() {
@@ -38,11 +39,11 @@ class SignUpStep4Fragment : Fragment() {
 
         //사용자가 누른 버튼에 따라 gender의 String 값 설정
         btnMale.setOnClickListener {
-            gender = "Male"
+            gender = "male"
         }
 
         btnFemale.setOnClickListener {
-            gender = "Female"
+            gender = "female"
         }
 
 
@@ -59,7 +60,7 @@ class SignUpStep4Fragment : Fragment() {
             //viewModel에 이름, 생년월일, 성별 저장
             signUpViewModel.name = name
             signUpViewModel.birth = birth
-            signUpViewModel.gender = gender
+            signUpViewModel.gender = Gender.valueOf(gender)  // String을 Enum으로 변환하여 저장
 
 
             //다음 스텝 레이아웃으로 이동

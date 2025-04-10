@@ -46,8 +46,7 @@ class Login : AppCompatActivity() {
             Log.d("로그인", "이메일 : $email")
             Log.d("로그인", "비밀번호 : $password")
 
-            //로그인 API 호출 (Retrofit)
-
+            //로그인 API & 토큰 발급 API 호출
             val request = LoginRequest(email, password)
 
             RetrofitClient.instance.login(request).enqueue(object : Callback<LoginResponse> {

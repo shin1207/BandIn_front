@@ -81,7 +81,7 @@
                         android:backgroundTintMode="src_atop"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center|center_vertical"
-                        android:text="레이놀즈"
+                        android:text="밴드1"
                         android:textColor="@color/darkBlue"
                         android:textSize="10sp" />
 
@@ -94,7 +94,7 @@
                         android:background="@drawable/radius_button_white"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center|center_vertical"
-                        android:text="호프가든"
+                        android:text="밴드2"
                         android:textColor="@color/darkBlue"
                         android:textSize="10sp" />
 
@@ -106,7 +106,7 @@
                         android:background="@drawable/radius_button_white"
                         android:fontFamily="sans-serif-black"
                         android:gravity="center|center_vertical"
-                        android:text="설"
+                        android:text="밴드3"
                         android:textColor="@color/darkBlue"
                         android:textSize="10sp" />
 
@@ -265,7 +265,7 @@
                     android:orientation="horizontal">
 
                     <TextView
-                        android:id="@+id/textView18"
+                        android:id="@+id/textEditInfo"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
@@ -294,7 +294,7 @@
             android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/textView23"
+                android:id="@+id/textLogout"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
@@ -326,7 +326,7 @@
             android:paddingLeft="10dp">
 
             <TextView
-                android:id="@+id/textView24"
+                android:id="@+id/textDelete"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="sans-serif-black"
@@ -401,7 +401,6 @@
                 android:layout_width="25dp"
                 android:layout_height="25dp"
                 app:srcCompat="@drawable/bandin"
-                app:tint="@color/darkestBlue"
                 tools:ignore="DuplicateIds" />
 
             <TextView
@@ -425,6 +424,7 @@
                 android:id="@+id/imageView3"
                 android:layout_width="25dp"
                 android:layout_height="25dp"
+                android:tint="@color/darkestBlue"
                 app:srcCompat="@drawable/profile"
                 tools:ignore="DuplicateIds" />
 

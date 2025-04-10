@@ -55,16 +55,6 @@
             android:layout_height="53dp"
             android:orientation="horizontal"></LinearLayout>
 
-        <TextView
-            android:id="@+id/textView25"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="10dp"
-            android:fontFamily="sans-serif-black"
-            android:text="나의 밴드"
-            android:textColor="@color/black"
-            android:textSize="19sp" />
-
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -74,6 +64,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView25"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:fontFamily="sans-serif-black"
+                    android:text="나의 밴드"
+                    android:textColor="@color/black"
+                    android:textSize="19sp" />
 
                 <LinearLayout
                     android:id="@+id/나의밴드"

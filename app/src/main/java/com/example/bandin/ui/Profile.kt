@@ -61,7 +61,6 @@ class Profile : AppCompatActivity() {
         profile = findViewById(R.id.profile)
 
         // 사용자 정보 조회
-        // 로그인 된 상태인지 확인 -> 토큰으로 사용자 정보확인
 
         //로그아웃 클릭 (API 호출)
 

@@ -18,6 +18,7 @@
     <color name="mediumLight">#E8E9F1</color>
     <color name="lightLight">#F8F9FE</color>
     <color name="lightestLight">#FFFFFF</color>
+    <color name="neturalLight">#F8F9FE</color>
 
     <!-- Neutral Dark -->
     <color name="darkestDark">#1E1E1E</color>
@@ -25,5 +26,6 @@
     <color name="mediumDark">#494A50</color>
     <color name="lightDark">#71727A</color>
     <color name="lightestDark">#8F9098</color>
+
 
 </resources>

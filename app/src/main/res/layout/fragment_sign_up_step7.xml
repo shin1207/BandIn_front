@@ -74,7 +74,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:backgroundTint="#E3F1FD"
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center|left"
@@ -89,7 +89,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="1년 이상 3년 미만" />
@@ -101,7 +101,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="3년 이상 5년 미만" />
@@ -112,7 +112,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="5년 이상 10년 미만" />
@@ -124,7 +124,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="10년 이상 " />
@@ -152,7 +152,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:backgroundTint="#E3F1FD"
                         android:fontFamily="sans-serif-medium"
                         android:gravity="center|left"
@@ -167,7 +167,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="1년 이상 3년 미만" />
@@ -179,7 +179,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="3년 이상 5년 미만" />
@@ -190,7 +190,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="5년 이상 10년 미만" />
@@ -202,7 +202,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="left"
                         android:layout_marginTop="10dp"
-                        android:background="@drawable/login_radius_text"
+                        android:background="@drawable/radius_button_black_stroke"
                         android:gravity="center|left"
                         android:paddingLeft="15dp"
                         android:text="10년 이상 " />

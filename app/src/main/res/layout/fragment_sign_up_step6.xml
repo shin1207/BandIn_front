@@ -48,7 +48,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:backgroundTint="#E3F1FD"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -63,7 +63,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="드럼" />
@@ -75,7 +75,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="보컬" />
@@ -86,7 +86,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="베이스" />
@@ -98,7 +98,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="건반악기" />
@@ -110,7 +110,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="없음" />

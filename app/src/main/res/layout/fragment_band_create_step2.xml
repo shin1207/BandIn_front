@@ -69,7 +69,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:backgroundTint="#E3F1FD"
             android:fontFamily="sans-serif-medium"
             android:gravity="center|left"
@@ -84,7 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="경기" />
@@ -96,7 +96,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="충청도" />
@@ -107,7 +107,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="강원도" />
@@ -119,7 +119,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="경상도" />
@@ -132,7 +132,7 @@
             android:layout_gravity="left"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="20dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:gravity="center|left"
             android:paddingLeft="15dp"
             android:text="전라도" />
@@ -150,7 +150,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            android:background="@drawable/login_radius_text"
+            android:background="@drawable/radius_button_black_stroke"
             android:hint="예) 홍대, 사당, 망원"
             android:paddingLeft="15dp"
             android:paddingTop="15dp"

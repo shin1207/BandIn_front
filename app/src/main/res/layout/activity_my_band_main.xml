@@ -167,7 +167,7 @@
                 android:textSize="12sp" />
 
             <ImageView
-                android:id="@+id/imageView4"
+                android:id="@+id/diveder"
                 android:layout_width="1sp"
                 android:layout_height="20dp"
                 app:srcCompat="@color/darkestLight" />
@@ -186,7 +186,7 @@
                 android:textSize="12sp" />
 
             <ImageView
-                android:id="@+id/imageView"
+                android:id="@+id/diveder"
                 android:layout_width="1sp"
                 android:layout_height="20dp"
                 app:srcCompat="@color/darkestLight" />
@@ -237,7 +237,7 @@
                     android:background="?android:attr/listDivider" />
 
                 <Button
-                    android:id="@+id/btnComp"
+                    android:id="@+id/posting"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
@@ -251,7 +251,7 @@
                     android:textColor="@color/darkestBlue" />
 
                 <Button
-                    android:id="@+id/btnComp"
+                    android:id="@+id/schedule"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
@@ -266,7 +266,7 @@
                     android:textColor="@color/darkDark" />
 
                 <Button
-                    android:id="@+id/btnComp"
+                    android:id="@+id/schedule"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"
@@ -281,7 +281,7 @@
                     android:textColor="@color/darkDark" />
 
                 <Button
-                    android:id="@+id/btnComp"
+                    android:id="@+id/schedule"
                     android:layout_width="match_parent"
                     android:layout_height="60dp"
                     android:layout_marginTop="20dp"

@@ -1,14 +1,23 @@
 package com.example.bandin.ui
 
+import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import com.example.bandin.R
+import com.example.bandin.data.api.RetrofitClient
+import com.example.bandin.data.model.LogoutRequest
+import com.example.bandin.data.model.LogoutResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 class Profile : AppCompatActivity() {
 
@@ -60,13 +69,60 @@ class Profile : AppCompatActivity() {
         bandin = findViewById(R.id.bandin)
         profile = findViewById(R.id.profile)
 
-        // 사용자 정보 조회
+        // TODO : 사용자 정보 불러오기
 
         //로그아웃 클릭 (API 호출)
+        logout.setOnClickListener {
 
-        //회원탈퇴 클릭 (API 호출)
+            // TODO : 로그아웃 요청을 위한 사용자 정보 (저장된 값에서 가져올 수 있음)
+            val email = "사용자이메일@example.com" // 실제 사용 시 저장된 값에서 불러오세요
+            val password = "사용자비밀번호"       // 보안상 비밀번호 저장은 비추. 예시용입니다.
+
+            val request = LogoutRequest(email, password)
+
+            RetrofitClient.instance.logout(request).enqueue(object : Callback<LogoutResponse> {
+                override fun onResponse(call: Call<LogoutResponse>, response: Response<LogoutResponse>) {
+                    if (response.isSuccessful) {
+                        val message = response.body()?.message ?: "로그아웃 성공"
+                        Log.d("로그아웃", message)
+
+                        /* (🔐 토큰 및 사용자 정보 제거) 백에서 이미 처리했으면 할 필요 X
+                        val prefs = getSharedPreferences("auth", MODE_PRIVATE)
+                        prefs.edit().clear().apply() */
+
+                        // 🚀 로그인 화면으로 이동
+                        val intent = Intent(this@Profile, Login::class.java)
+                        intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        startActivity(intent)
+                    } else {
+                        Log.e("로그아웃 실패", "응답 코드: ${response.code()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<LogoutResponse>, t: Throwable) {
+                    Toast.makeText(this@Profile, "네트워크 오류", Toast.LENGTH_SHORT).show()
+                }
+            })
+        }
 
 
+        //TODO : 회원탈퇴 클릭 (API 호출)
+
+
+        //네비게이션 메뉴
+        chat.setOnClickListener{
+            // TODO: activity_chat_main 으로 이동
+        }
+
+        bandin.setOnClickListener{
+            val intent = Intent(this, Main::class.java)
+            startActivity(intent)
+        }
+
+        profile.setOnClickListener{
+            val intent = Intent(this, Profile::class.java)
+            startActivity(intent)
+        }
 
 
     }

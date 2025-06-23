@@ -76,14 +76,14 @@
                     android:textSize="19sp" />
 
                 <LinearLayout
-                    android:id="@+id/나의밴드"
+                    android:id="@+id/myBand"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/radius_button_lightest_blue"
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/bandImage"
+                        android:id="@+id/myBandImage"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_gravity="left"
@@ -103,7 +103,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textBandName"
+                            android:id="@+id/myBandName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -114,7 +114,7 @@
                             android:textSize="13sp" />
 
                         <TextView
-                            android:id="@+id/textBandInfo"
+                            android:id="@+id/myBandInfo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -168,7 +168,7 @@
                     android:orientation="horizontal">
 
                     <ImageView
-                        android:id="@+id/otherBandImage"
+                        android:id="@+id/bandImage"
                         android:layout_width="90dp"
                         android:layout_height="90dp"
                         android:layout_gravity="left"
@@ -188,7 +188,7 @@
                         android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/textBandName"
+                            android:id="@+id/bandName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"
@@ -199,7 +199,7 @@
                             android:textSize="13sp" />
 
                         <TextView
-                            android:id="@+id/textOtherBandInfo"
+                            android:id="@+id/bandInfo"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_weight="1"

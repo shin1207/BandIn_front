@@ -37,5 +37,7 @@ class Main : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        //메인화면 불러오기 (api)
+
     }
 }

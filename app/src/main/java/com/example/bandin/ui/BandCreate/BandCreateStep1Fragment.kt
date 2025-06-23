@@ -29,7 +29,6 @@ class BandCreateStep1Fragment : Fragment() {
         val btnNext = view.findViewById<Button>(R.id.btnNext)
 
 
-
         //다음 버튼 클릭 리스너 : 이메일을 String으로 ViewModel에 저장
         btnNext.setOnClickListener {
 

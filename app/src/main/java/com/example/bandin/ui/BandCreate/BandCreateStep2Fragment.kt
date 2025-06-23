@@ -32,7 +32,7 @@ class BandCreateStep2Fragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        //스텝5을 컨테이너에 띄우도록 view로 설정
+        //Fragment2을 컨테이너에 띄우도록 view로 설정
         val view = inflater.inflate(R.layout.fragment_band_create_step2, container, false)
 
 
@@ -78,7 +78,7 @@ class BandCreateStep2Fragment : Fragment() {
             bandCreateViewModel.state_detail = edtStateDetail.text.toString()
 
             //밴드만들기 액티비티 통해서 다음 스텝 레이아웃으로 이동
-            (activity as? BandCreate)?.goToNextFragment(BandCreate3Fragment())
+            (activity as? BandCreate)?.goToNextFragment(BandCreateStep3Fragment())
         }
         return view
     }

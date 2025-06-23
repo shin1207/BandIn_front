@@ -107,7 +107,7 @@ class SignUpStep9Fragment : Fragment() {
                        gender: Gender, state: State, genre: Genre, style: Style,
                        instrument: List<InstrumentExperience>) {
 
-        // TODO: Retrofit API 호출
+        // TODO: 회원가입 API 호출
         val request = SignUpRequest(email, password, name, birth, gender, state, genre, style, instrument)
 
         RetrofitClient.instance.signup(request).enqueue(object : Callback<SignUpResponse> {

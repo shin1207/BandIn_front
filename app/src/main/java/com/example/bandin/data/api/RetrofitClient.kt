@@ -24,4 +24,12 @@ object RetrofitClient {
             .build()
             .create(AuthService::class.java)
     }
+    private val retrofit: Retrofit by lazy {
+        Retrofit.Builder()
+            .baseUrl(BASE_URL)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+    val bandService: BandService by lazy { retrofit.create(BandService::class.java) }
 }

@@ -88,6 +88,15 @@ data class EmailVerifyRequest(
     val code: String
 )
 
+
+//이미지 전송용 모델
+data class ImageResponse(
+    val id: Long,
+    val fileName: String,
+    val userName: String,
+    val url: String
+)
+
 // 회원가입 > 인증번호 검증 응답모델
 data class EmailVerifyResponse(
     val message: String

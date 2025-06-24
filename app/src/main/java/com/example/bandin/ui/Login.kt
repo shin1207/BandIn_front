@@ -51,13 +51,22 @@ class Login : AppCompatActivity() {
 
             RetrofitClient.instance.login(request).enqueue(object : Callback<LoginResponse> {
                 override fun onResponse(call: Call<LoginResponse>, response: Response<LoginResponse>) {
+
                     if (response.isSuccessful) {
                         Log.d("로그인 성공", "토큰: ${response.body()?.token}")
+                        val loginResponse = response.body()
+                        val token = loginResponse?.token
+                        val name = loginResponse?.name
+                        val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
+                        with(sharedPref.edit()) {
+                            putString("accessToken", token)
+                            putString("memberName", name)
+                            apply()
+                        }
                     } else {
                         Log.e("로그인 실패", "오류 코드: ${response.code()}")
                     }
                 }
-
 
                 override fun onFailure(call: Call<LoginResponse>, t: Throwable) {
                     Toast.makeText(this@Login, "네트워크 오류", Toast.LENGTH_SHORT).show()

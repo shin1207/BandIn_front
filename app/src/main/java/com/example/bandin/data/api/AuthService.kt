@@ -31,7 +31,6 @@ interface AuthService {
     fun logout(@Body request: LogoutRequest): Call<LogoutResponse>
 
 
-
     // 밴드 만들기
     //@POST("/api/member/createBand)
     //fun bandCreate(@Body request: BandCreateRequest): Call<BandCreateResponse>

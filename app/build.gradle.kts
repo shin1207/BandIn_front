@@ -46,5 +46,6 @@ dependencies {
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
     implementation(libs.androidx.activity)
-    implementation(libs.androidx.constraintlayout) // 코루틴
+    implementation(libs.androidx.constraintlayout)
+    implementation(libs.androidx.media3.common.ktx) // 코루틴
 }

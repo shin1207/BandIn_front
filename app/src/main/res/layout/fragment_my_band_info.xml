@@ -223,7 +223,7 @@
                     android:background="@drawable/radius_button_lightest_blue"
                     android:gravity="center|left"
                     android:padding="20dp"
-                    android:text="안녕하세요. 너바나 트리뷰트 밴드입니다. \n합주랑 공연 같이하실 분 구합니다"
+                    android:text="안녕하세요. 너바나 커버밴드입니다. \n합주랑 공연 같이하실 분 구합니다"
                     android:textColor="@color/darkestBlue"
                     android:textSize="11sp" />
 

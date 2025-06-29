@@ -16,6 +16,7 @@ import androidx.fragment.app.Fragment
 import android.util.Log
 import com.example.bandin.R
 import com.example.bandin.data.api.RetrofitClient.bandService
+import com.example.bandin.data.model.BandInfoResponse
 import com.example.bandin.ui.Profile
 import retrofit2.Call
 import retrofit2.Callback
@@ -53,25 +54,65 @@ class MyBandFragment_Member : Fragment(){
         //fragment_my_band_member을 컨테이너에 띄우도록 view로 설정
         val view = inflater.inflate(R.layout.fragment_my_band_member, container, false)
 
-        //밴드 정보
+        // 🔗 ID 연결
+        btnPrevious = view.findViewById(R.id.btnPrevious)
+        btnSetting = view.findViewById(R.id.btnSetting)
 
+        textBandName = view.findViewById(R.id.textBandName)
+        textGenre = view.findViewById(R.id.textGenre)
+        textAge = view.findViewById(R.id.textAge)
+        textStyle = view.findViewById(R.id.textStyle)
+        textState = view.findViewById(R.id.textState)
+        textStatus = view.findViewById(R.id.textStatus)
+        bandImage = view.findViewById(R.id.bandImage)
 
+        btnMenu1 = view.findViewById(R.id.btnMenu1)
+        btnMenu2 = view.findViewById(R.id.btnMenu2)
+        btnMenu3 = view.findViewById(R.id.btnMenu3)
 
-        // 밴드 멤버
+        navChat = view.findViewById(R.id.chat)
+        navBand = view.findViewById(R.id.bandin)
+        navProfile = view.findViewById(R.id.profile)
+
         val memberContainer = view.findViewById<LinearLayout>(R.id.memberContainer)
 
+        // 🔐 사용자 인증 정보 가져오기
         // SharedPreferences에서 accessToken, memberName 가져오기
         val sharedPref = requireContext().getSharedPreferences("UserPrefs", AppCompatActivity.MODE_PRIVATE)
         val accessToken = sharedPref.getString("accessToken", "") ?: ""
         val myMemberId = sharedPref.getString("memberName", "noName") ?: "noName"
         val bandId = arguments?.getInt("bandId", -1) ?: -1
 
-        Log.d("밴드멤버 요청", "accessToken: $accessToken")
-        Log.d("밴드멤버 요청", "bandId: $bandId")
+        // 디버깅
+        Log.d("나의밴드 (멤버Pg)", "이름: $myMemberId")
+        Log.d("나의밴드 (멤버Pg)", "bandId: $bandId")
 
+
+        // 액세스 토큰이 유효할 때만 실행
         if (accessToken.isNotBlank() && bandId != -1) {
             val tokenHeader = "Bearer $accessToken"
 
+            // ---- 1. 밴드 정보 ----
+            bandService.getBandInfo(tokenHeader, bandId).enqueue(object : Callback<BandInfoResponse> {
+                override fun onResponse(call: Call<BandInfoResponse>, response: Response<BandInfoResponse>) {
+                    if (response.isSuccessful) {
+                        val band = response.body()
+                        textBandName.text = band?.name ?: "(밴드명 없음)"
+                        textGenre.text    = "장르 : ${band?.genre ?: "-"}"
+                        textAge.text      = "연령대 : ${band?.ageGroup ?: "-"}"
+                        textStyle.text    = "지향 : ${band?.style ?: "-"}"
+                        textState.text    = "지역 : ${band?.location ?: "-"}"
+                    } else {
+                        Log.e("밴드정보 실패", "응답 코드: ${response.code()}")
+                    }
+                }
+
+                override fun onFailure(call: Call<BandInfoResponse>, t: Throwable) {
+                    Log.e("밴드정보 오류", "네트워크 오류: ${t.message}")
+                }
+            })
+
+            // ---- 2. 밴드 멤버  ----
             bandService.getBandMembers(tokenHeader, bandId).enqueue(object : Callback<BandMembersResponse> {
                 override fun onResponse(call: Call<BandMembersResponse>, response: Response<BandMembersResponse>) {
                     if (response.isSuccessful) {
@@ -122,93 +163,14 @@ class MyBandFragment_Member : Fragment(){
         }
 
 
-        /*위에서 정의한 변수들의 id 연결
-        btnPrevious   = findViewById(R.id.btnPrevious)
-        btnSetting    = findViewById(R.id.btnSetting)
-        textBandName  = findViewById(R.id.textBandName)
-        textGenre     = findViewById(R.id.textGenre)
-        textAge       = findViewById(R.id.textAge)
-        textStyle     = findViewById(R.id.textStyle)
-        textState     = findViewById(R.id.textState)
-        textStatus    = findViewById(R.id.textStatus)
-        bandImage     = findViewById(R.id.bandImage)
 
-        btnMenu1      = findViewById(R.id.btnMenu1)
-        btnMenu2      = findViewById(R.id.btnMenu2)
-        btnMenu3      = findViewById(R.id.btnMenu3)
-
-        navChat       = findViewById(R.id.chat)
-        navBand       = findViewById(R.id.bandin)
-        navProfile    = findViewById(R.id.profile)*/
-
-        /*API호출+멤버가져오기
-        val accessToken = intent.getStringExtra("accessToken") ?: ""
-        val bandId      = intent.getIntExtra("bandId", -1)
-        if (accessToken.isNotBlank() && bandId != -1) {
-            val tokenHeader = "Bearer $accessToken"
-
-            bandService.getBandMembers(tokenHeader, bandId)
-                .enqueue(object : retrofit2.Callback<BandMembersResponse> {
-                    override fun onResponse(
-                        call: retrofit2.Call<BandMembersResponse>,
-                        response: retrofit2.Response<BandMembersResponse>
-                    ) {
-                        if (response.isSuccessful) {
-                            // TODO: data 처리 & UI 반영
-                            val members = response.body()?.data ?: emptyList()
-                            //memberID부분 로그인 과정에서 sharedPref에 저장해서 확인해야함
-                            val sharedPref = getSharedPreferences("UserPrefs", MODE_PRIVATE)
-                            val myMemberId = sharedPref.getString("name", "noName")
-                            if (members.any { it.memberId == myMemberId && it.status == "ACCEPTED" }) {
-                                textStatus.text = "참여 중"
-                            }
-                            members.filter { it.status == "ACCEPTED" && it.memberId != myMemberId }.forEach { member ->
-                                val memberView = layoutInflater.inflate(R.layout.activity_my_band_member_item, memberContainer, false)
-
-                                val memberName = memberView.findViewById<TextView>(R.id.textMemberName)
-                                val memberInfo = memberView.findViewById<TextView>(R.id.textMemberInfo)
-                                //리더 표시기능 미구현됨
-                                val teamLeaderIcon = memberView.findViewById<ImageView>(R.id.teamLeaderStatus)
-
-                                bandService.getUserData(member.memberId).enqueue(object : Callback<UserDataResponse> {
-                                    override fun onResponse(call: Call<UserDataResponse>, response: Response<UserDataResponse>) {
-                                        if (response.isSuccessful) {
-                                            val user = response.body()
-                                            memberName.text = user?.name ?: member.memberId
-                                            memberInfo.text = "${user?.instrument ?: ""} / ${user?.experience ?: ""}"
-                                        } else {
-                                            memberName.text = member.memberId
-                                        }
-                                    }
-
-                                    override fun onFailure(call: Call<UserDataResponse>, t: Throwable) {
-                                        memberName.text = member.memberId
-                                    }
-                                })
-
-
-                                memberContainer.addView(memberView)
-                            }
-                        } else {
-                            // TODO: 에러 코드별 처리
-                        }
-                    }
-
-                    override fun onFailure(
-                        call: retrofit2.Call<BandMembersResponse>,
-                        t: Throwable
-                    ) {
-                        // TODO: 네트워크 오류 처리
-                    }
-                })
-        }
-*/
-
+        //---- 버튼 동작 구현 ----
         btnPrevious.setOnClickListener {
             // 이전 화면으로 이동
         }
         btnSetting.setOnClickListener  {
             // 설정 화면으로 이동
+            (activity as? MyBand)?.goToNextFragment(MyBandFragment_Setting())
 
         }
 

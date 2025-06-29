@@ -27,3 +27,12 @@ data class InstrumentDto(
     val instrument: String,
     val experience: String
 )
+
+data class BandInfoResponse(
+    val name: String,
+    val genre: String,
+    val ageGroup: String,
+    val style: String,
+    val location: String
+    //추후 BE API 명세서 보고 수정
+)

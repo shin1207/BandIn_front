@@ -148,6 +148,7 @@
             android:layout_height="35dp"
             android:layout_gravity="fill_horizontal"
             android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"
             android:background="@drawable/radius_button_lightest_blue"
             android:gravity="center"
             android:orientation="horizontal"
@@ -204,126 +205,44 @@
                 android:textSize="12sp" />
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnNew"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/radius_button_lightest_blue"
+                android:drawableRight="@drawable/baseline_add_24"
+                android:fontFamily="sans-serif-black"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:stateListAnimator="@null"
+                android:text="일정 및 공고 추가"
+                android:textAlignment="viewStart"
+                android:textColor="@color/black" />
+
+            <View
+                android:id="@+id/divider"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="20dp"
+                android:background="?android:attr/listDivider" />
+
+        </LinearLayout>
+
         <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="395dp"
+            android:layout_height="match_parent"
             android:layout_marginTop="10dp">
 
             <LinearLayout
+                android:id="@+id/postContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <Button
-                    android:id="@+id/btnNew"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:drawableRight="@drawable/baseline_add_24"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="일정 및 공고 추가"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/black" />
-
-                <View
-                    android:id="@+id/divider"
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:layout_marginTop="20dp"
-                    android:background="?android:attr/listDivider" />
-
-                <Button
-                    android:id="@+id/posting"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="기타리스트 모집중 (~5/1)"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/darkestBlue" />
-
-                <Button
-                    android:id="@+id/schedule"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:backgroundTint="@color/neturalLight"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="4/27 : 정기합주"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/darkDark" />
-
-                <Button
-                    android:id="@+id/schedule"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:backgroundTint="@color/neturalLight"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="4/12 : 정기합주"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/darkDark" />
-
-                <Button
-                    android:id="@+id/schedule"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:backgroundTint="@color/neturalLight"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="4/11 : 정기합주"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/darkDark" />
-
-                <Button
-                    android:id="@+id/btnComp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:backgroundTint="@color/neturalLight"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="4/2 : 정기합주"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/darkDark" />
-
-                <Button
-                    android:id="@+id/btnComp"
-                    android:layout_width="match_parent"
-                    android:layout_height="60dp"
-                    android:layout_marginTop="20dp"
-                    android:background="@drawable/radius_button_lightest_blue"
-                    android:backgroundTint="@color/neturalLight"
-                    android:fontFamily="sans-serif-black"
-                    android:paddingLeft="20dp"
-                    android:paddingRight="20dp"
-                    android:stateListAnimator="@null"
-                    android:text="4/1 : 정기합주"
-                    android:textAlignment="viewStart"
-                    android:textColor="@color/darkDark" />
-            </LinearLayout>
+                android:orientation="vertical"></LinearLayout>
         </ScrollView>
 
     </LinearLayout>

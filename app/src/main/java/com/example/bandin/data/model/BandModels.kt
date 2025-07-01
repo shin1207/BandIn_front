@@ -11,6 +11,8 @@ data class BandMemberDto(
     val memberId: String,
     val bandId: Int,
     val status: String,
+    val bandRole: String,
+    val instrument: InstrumentDto,
     val createdAt: String
 )
 

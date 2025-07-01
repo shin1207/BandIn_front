@@ -129,24 +129,18 @@ class MyBandFragment_Member : Fragment(){
 
                             val memberName = memberView.findViewById<TextView>(R.id.textMemberName)
                             val memberInfo = memberView.findViewById<TextView>(R.id.textMemberInfo)
+
+                            //getUserData대신 사용
+                            memberName.text = member.memberId
+                            memberInfo.text = "악기: ${member.instrument.instrument} / 경력: ${member.instrument.experience}"
                             val teamLeaderIcon = memberView.findViewById<ImageView>(R.id.teamLeaderStatus)
 
-                            // 개별 멤버 상세정보 요청
-                            bandService.getUserData(member.memberId).enqueue(object : Callback<UserDataResponse> {
-                                override fun onResponse(call: Call<UserDataResponse>, response: Response<UserDataResponse>) {
-                                    if (response.isSuccessful) {
-                                        val user = response.body()
-                                        memberName.text = user?.name ?: member.memberId
-                                        memberInfo.text = "${user?.instrument ?: ""} / ${user?.experience ?: ""}"
-                                    } else {
-                                        memberName.text = member.memberId
-                                    }
-                                }
-
-                                override fun onFailure(call: Call<UserDataResponse>, t: Throwable) {
-                                    memberName.text = member.memberId
-                                }
-                            })
+                            //리더 아이콘 표시 유무
+                            if (member.bandRole == "LEADER") {
+                                teamLeaderIcon.visibility = View.VISIBLE
+                            } else {
+                                teamLeaderIcon.visibility = View.GONE
+                            }
 
                             memberContainer.addView(memberView)
                         }

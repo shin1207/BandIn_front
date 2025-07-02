@@ -9,6 +9,7 @@ data class BandMembersResponse(
 data class BandMemberDto(
     val id: Int,
     val memberId: String,
+    val name: String,
     val bandId: Int,
     val status: String,
     val bandRole: String,

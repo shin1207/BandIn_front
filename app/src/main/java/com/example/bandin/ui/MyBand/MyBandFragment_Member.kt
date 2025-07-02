@@ -131,7 +131,7 @@ class MyBandFragment_Member : Fragment(){
                             val memberInfo = memberView.findViewById<TextView>(R.id.textMemberInfo)
 
                             //getUserData대신 사용
-                            memberName.text = member.memberId
+                            memberName.text = member.name  //여기 ID 이릅으로 변경 필요
                             memberInfo.text = "악기: ${member.instrument.instrument} / 경력: ${member.instrument.experience}"
                             val teamLeaderIcon = memberView.findViewById<ImageView>(R.id.teamLeaderStatus)
 
